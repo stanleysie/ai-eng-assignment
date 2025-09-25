@@ -1,118 +1,78 @@
-## Scaffolding
+# Recipe Enhancement Platform
 
-```bash
-uv init
-uv venv
-uv add fastapi pydantic uvicorn python-dotenv loguru openai
-uv add --dev pytest
-# Activate the virtual environment
-source .venv/bin/activate  # On Unix/macOS
-
-# write [tool.pytest.ini_options] to pyproject.toml for testing setup
-echo "[tool.pytest.ini_options]" >> pyproject.toml
-echo "pythonpath = \"src\"" >> pyproject.toml
-
-# this is for testing setup
-echo "asyncio_mode = \"auto\"" >> pyproject.toml
-echo "asyncio_default_fixture_loop_scope = \"function\"" >> pyproject.toml
-
-# this is for ruff setup
-echo "[tool.ruff]" >> pyproject.toml
-echo "select = [\"I\"]" >> pyproject.toml
-echo "line-length = 88" >> pyproject.toml
-echo "[tool.ruff.isort]" >> pyproject.toml
-echo "combine-as-imports = true" >> pyproject.toml
-echo "force-wrap-aliases = true" >> pyproject.toml
-
-```
+TBD
 
 ## Installation
 
-This project uses [`UV`](https://docs.astral.sh/uv/pip/compile/#locking-requirements) and `poetry` for dependency management. To set up the environment and install dependencies:
+This project uses [`uv`](https://docs.astral.sh/uv/) for fast, reliable Python package management.
 
-To set up, run:
+### Prerequisites
+
+- Python 3.13+
+- `uv` package manager
+
+## Quick Start
 
 ```bash
+# Install dependencies
 uv venv
 source .venv/bin/activate
 uv pip sync pyproject.toml
+
+# Run the scraper
+uv run python src/scraper_v2.py
+
+# Scrape a single recipe (runs main() function)
+uv run python src/scraper_v2.py
 ```
 
-To run the program:
+### Output Structure
 
-```bash
-uv run src/main.py
+Scraped data is saved as JSON files in the `data/` directory:
+
+```json
+{
+  "recipe_id": "10813",
+  "title": "Best Chocolate Chip Cookies",
+  "url": "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/",
+  "scraped_at": "2024-09-25T00:16:00.000000",
+  "rating": {
+    "value": "4.6",
+    "count": "19353"
+  },
+  "ingredients": [...],
+  "instructions": [...],
+  "featured_tweaks": [
+    {
+      "text": "I used a half cup of sugar and one-and-a-half cups of brown sugar...",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true,
+      "username": "Chef John"
+    }
+  ],
+  "reviews": [...]
+}
 ```
 
-To run the tests:
+## Development
 
-```bash
-uv run pytest tests
-```
+### Package Management
 
-## Package Management
-
-To add a new package, run:
+Add new dependencies:
 
 ```bash
 uv add <package_name>
 ```
 
-To remove a package, run:
+Remove dependencies:
 
 ```bash
 uv remove <package_name>
 ```
 
-### Setup
+Add development dependencies:
 
 ```bash
-./setup.sh
-```
-
-### Debugging
-
-Just import pdb and call `pdb.set_trace()` in the test you want to debug.
-
-- `c` to continue execution
-- `n` to go to the next line
-- `s` to step into a function
-- `l` to list the code around the current line
-- `p` to print the value of a variable
-- `q` to quit the debugger
-  `import pprint; pprint.pprint(locals())` to print all the variables in the current scope
-
-make sure to run the tests with the pdb flag: `pytest tests/test_dws_search.py --pdb`
-
-### Poetry config setting
-
-to avoid annoying package import errors make sure you set the
-`pythonpath` in the `pytest.ini` file to use the `src` directory from the `pyproject.toml` file.
-
-```ini
-[tool.pytest.ini_options]
-pythonpath = "src"
-```
-
-### Recommended VS Code Settings
-
-```
-{
-    "[python]": {
-      "editor.formatOnSave": true
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "ruff.lint.args": ["--config=pyproject.toml"],
-     "editor.codeActionsOnSave": {
-       "source.organizeImports": "explicit",
-       "source.fixAll": "explicit"
-     },
-    "editor.formatOnSave": true,
-    "python.analysis.typeCheckingMode": "basic",
-     "[json]": {
-     "editor.wordWrap": "wordWrapColumn",
-     "editor.wordWrapColumn": 80
-   },
-
-   }
+uv add --dev <package_name>
 ```
