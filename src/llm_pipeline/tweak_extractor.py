@@ -123,6 +123,8 @@ class TweakExtractor:
         Returns:
             Tuple of (ModificationObject, source_Review) if successful, (None, None) otherwise
         """
+        import random
+
         # Filter to reviews with modifications
         modification_reviews = [r for r in reviews if r.has_modification]
 
@@ -130,11 +132,9 @@ class TweakExtractor:
             logger.warning("No reviews with modifications found")
             return None, None
 
-        # Select the review based on the highest rating
-        selected_review = max(modification_reviews, key=lambda x: x.rating)
-        logger.info(
-            f"Selected review: {selected_review.text[:100]}... with rating {selected_review.rating}"
-        )
+        # Select one random review
+        selected_review = random.choice(modification_reviews)
+        logger.info(f"Selected review: {selected_review.text[:100]}...")
 
         modification = self.extract_modification(selected_review, recipe)
         if modification:
