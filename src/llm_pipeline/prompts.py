@@ -7,17 +7,17 @@ modifications from user review text.
 
 SYSTEM_PROMPT = """You are an expert recipe analyst. Your job is to extract structured recipe modifications from user reviews.
 
-When a user shares their experience modifying a recipe, you need to:
-1. Identify exactly what changes they made
-2. Understand why they made those changes
-3. Convert their modifications into structured edit operations
+Your goals:
+1) Identify every discrete modification mentioned (there may be multiple) across ingredients and/or instructions.
+2) Explain briefly why the changes improve the recipe.
+3) Convert the modifications into precise, atomic edit operations.
 
-You must output valid JSON that matches the ModificationObject schema.
+Output must be valid JSON that matches the ModificationObject schema.
 
-Categories:
+Categories (for the single top-level "modification_type" field):
 - "ingredient_substitution": Replacing one ingredient with another
 - "quantity_adjustment": Changing amounts of existing ingredients
-- "technique_change": Altering cooking method, temperature, time. For this modifiaction, adjust the tone and wording of the instructions to match the flow of original instructions.
+- "technique_change": Altering cooking method, temperature, time, or procedural steps
 - "addition": Adding new ingredients or steps
 - "removal": Removing ingredients or steps
 
@@ -26,7 +26,19 @@ Edit operations:
 - "add_after": Add new text after finding target text
 - "remove": Remove text that matches the find pattern
 
-Be precise with text matching - use the exact text from the original recipe when possible."""
+Precision rules:
+- Be exact with "find": copy substrings from the original recipe ingredients/instructions.
+- For "replace", only change the relevant fragment; leave untouched text as-is.
+- For "add_after", choose a logical anchor in the same section (ingredients or instructions).
+- Extract and classify each modification as a discrete change.
+
+Tone/style mirroring for added instructions:
+- Match the original instruction style (e.g., imperative voice, brevity, punctuation, and numbering/bullets if present).
+- Mirror temperature/time formatting and units.
+- Avoid first person; keep consistent tense and style with the original instructions.
+
+Only extract concrete changes the user actually made, not general suggestions or opinions.
+"""
 
 EXTRACTION_PROMPT = """Original Recipe:
 Title: {title}
@@ -35,95 +47,80 @@ Instructions: {instructions}
 
 User Review: "{review_text}"
 
-Extract the recipe modifications from this review. The user has made changes to improve the recipe.
+Extract the recipe modifications from this review. The user may have made multiple changes across ingredients and/or instructions.
 
-Output a JSON object with this structure:
+Output a JSON object with this structure (single object, multiple edits allowed):
 {{
     "modification_type": "quantity_adjustment|ingredient_substitution|technique_change|addition|removal",
-    "reasoning": "Brief explanation of why this modification improves the recipe",
+    "reasoning": "Brief explanation of why this modification improves the recipe; mention any secondary modification types present",
     "edits": [
         {{
             "target": "ingredients|instructions",
             "operation": "replace|add_after|remove",
-            "find": "exact text to find",
+            "find": "exact text to find (from the original recipe)",
             "replace": "replacement text (for replace operations)",
-            "add": "text to add (for add_after operations)"
+            "add": "text to add (for add_after operations; tone/style must match original instructions when target='instructions')"
         }}
     ]
-}
+}}
 
 Focus on concrete changes the user actually made, not general suggestions."""
 
 FEW_SHOT_EXAMPLES = [
     {
-        "review": "I used a half cup of sugar and one-and-a-half cups of brown sugar instead of the recipe amounts. Made the cookies much more chewy and flavorful!",
-        "ingredients": [
-            "1 cup butter, softened",
-            "1 cup white sugar",
-            "1 cup packed brown sugar",
-            "2 eggs",
+        "review": "I added 2 cloves of garlic and baked at 400 degrees F for 12 minutes instead of 10 at 350. Turned out more flavorful and nicely browned.",
+        "ingredients": ["1 tablespoon olive oil", "salt and pepper to taste"],
+        "instructions": [
+            "Preheat the oven to 350 degrees F (175 degrees C).",
+            "Bake in the preheated oven until edges are lightly browned, about 10 minutes.",
         ],
         "expected_output": {
-            "modification_type": "quantity_adjustment",
-            "reasoning": "Makes cookies more chewy and flavorful by increasing brown sugar ratio",
+            "modification_type": "technique_change",
+            "reasoning": "Higher temperature and longer bake improves browning; garlic addition boosts flavor (secondary type: addition).",
+            "edits": [
+                {
+                    "target": "ingredients",
+                    "operation": "add_after",
+                    "find": "salt and pepper to taste",
+                    "add": "2 cloves garlic, minced",
+                },
+                {
+                    "target": "instructions",
+                    "operation": "replace",
+                    "find": "350 degrees F",
+                    "replace": "400 degrees F",
+                },
+                {
+                    "target": "instructions",
+                    "operation": "replace",
+                    "find": "about 10 minutes",
+                    "replace": "12 minutes",
+                },
+            ],
+        },
+    },
+    {
+        "review": "I chilled the dough for 30 minutes before baking and swapped white sugar for coconut sugar. The texture was better and flavor more complex.",
+        "ingredients": ["1 cup white sugar", "2 cups all-purpose flour"],
+        "instructions": [
+            "Mix until just combined.",
+            "Bake in the preheated oven until edges are set, about 10 minutes.",
+        ],
+        "expected_output": {
+            "modification_type": "technique_change",
+            "reasoning": "Chilling improves texture and spread control; coconut sugar substitution adds deeper flavor (secondary type: ingredient_substitution).",
             "edits": [
                 {
                     "target": "ingredients",
                     "operation": "replace",
                     "find": "1 cup white sugar",
-                    "replace": "0.5 cup white sugar",
+                    "replace": "1 cup coconut sugar",
                 },
                 {
-                    "target": "ingredients",
-                    "operation": "replace",
-                    "find": "1 cup packed brown sugar",
-                    "replace": "1.5 cups packed brown sugar",
-                },
-            ],
-        },
-    },
-    {
-        "review": "I added a teaspoon of cream of tartar to the batter and omitted the water. The cookies retained their shape and didn't spread when baked.",
-        "ingredients": [
-            "1 teaspoon baking soda",
-            "2 teaspoons hot water",
-            "0.5 teaspoon salt",
-        ],
-        "expected_output": {
-            "modification_type": "addition",
-            "reasoning": "Helps cookies retain shape and prevents spreading during baking",
-            "edits": [
-                {
-                    "target": "ingredients",
+                    "target": "instructions",
                     "operation": "add_after",
-                    "find": "0.5 teaspoon salt",
-                    "add": "1 teaspoon cream of tartar",
-                },
-                {
-                    "target": "ingredients",
-                    "operation": "remove",
-                    "find": "2 teaspoons hot water",
-                },
-            ],
-        },
-    },
-    {
-        "review": "I used 1 tsp of salt instead of 1/2 tsp and omitted the nuts. Much better flavor without being too salty.",
-        "ingredients": ["0.5 teaspoon salt", "1 cup chopped walnuts"],
-        "expected_output": {
-            "modification_type": "quantity_adjustment",
-            "reasoning": "Improves flavor balance without making cookies too salty",
-            "edits": [
-                {
-                    "target": "ingredients",
-                    "operation": "replace",
-                    "find": "0.5 teaspoon salt",
-                    "replace": "1 teaspoon salt",
-                },
-                {
-                    "target": "ingredients",
-                    "operation": "remove",
-                    "find": "1 cup chopped walnuts",
+                    "find": "Mix until just combined.",
+                    "add": "Chill the dough in the refrigerator for 30 minutes.",
                 },
             ],
         },
@@ -153,6 +150,31 @@ FEW_SHOT_EXAMPLES = [
             ],
         },
     },
+    {
+        "review": "I added a teaspoon of cream of tartar to the batter and omitted the water. The cookies retained their shape and didn't spread when baked.",
+        "ingredients": [
+            "1 teaspoon baking soda",
+            "2 teaspoons hot water",
+            "0.5 teaspoon salt",
+        ],
+        "expected_output": {
+            "modification_type": "addition",
+            "reasoning": "Helps cookies retain shape and prevents spreading during baking (secondary type: removal).",
+            "edits": [
+                {
+                    "target": "ingredients",
+                    "operation": "add_after",
+                    "find": "0.5 teaspoon salt",
+                    "add": "1 teaspoon cream of tartar",
+                },
+                {
+                    "target": "ingredients",
+                    "operation": "remove",
+                    "find": "2 teaspoons hot water",
+                },
+            ],
+        },
+    },
 ]
 
 
@@ -167,8 +189,8 @@ def build_few_shot_prompt(
             f'Review: "{example["review"]}"\n'
             f"Output: {example['expected_output']}"
             for i, example in enumerate(
-                FEW_SHOT_EXAMPLES[:2]
-            )  # Use 2 most relevant examples
+                FEW_SHOT_EXAMPLES[:3]
+            )  # Use 3 most relevant examples
         ]
     )
 
