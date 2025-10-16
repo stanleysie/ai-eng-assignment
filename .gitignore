@@ -52,3 +52,6 @@ scratch.py
 claude.md
 memory-bank/
 .claude/
+
+# frontend
+frontend/node_modules/*

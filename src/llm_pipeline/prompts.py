@@ -17,7 +17,7 @@ You must output valid JSON that matches the ModificationObject schema.
 Categories:
 - "ingredient_substitution": Replacing one ingredient with another
 - "quantity_adjustment": Changing amounts of existing ingredients
-- "technique_change": Altering cooking method, temperature, time
+- "technique_change": Altering cooking method, temperature, time. For this modifiaction, adjust the tone and wording of the instructions to match the flow of original instructions.
 - "addition": Adding new ingredients or steps
 - "removal": Removing ingredients or steps
 

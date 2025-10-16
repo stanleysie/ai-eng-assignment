@@ -36,9 +36,18 @@ OPENAI_API_KEY=your-openai-api-key-here
 uv run python src/scraper_v2.py
 ```
 
-### 2. Run Recipe Enhancement Pipeline
+### 2. Run Flask API server
 
 ```bash
+cd src
+uv run python app.py
+```
+
+Server runs on `http://localhost:8000`.
+
+### 3. Run Recipe Enhancement Pipeline
+
+````bash
 cd src
 
 # Test single recipe (chocolate chip cookies)
@@ -46,7 +55,23 @@ uv run python test_pipeline.py single
 
 # Process all recipes
 uv run python test_pipeline.py all
-```
+
+## Frontend (Next.js)
+
+Located in `frontend/`.
+
+### Setup
+
+```bash
+cd frontend
+npm install
+cp .env.local.example .env.local   # set NEXT_PUBLIC_APP_URL=http://localhost:3000
+npm run dev
+````
+
+Open `http://localhost:3000` and ensure the Flask API is running.
+
+````bash
 
 ## Output
 
@@ -83,7 +108,7 @@ Original scraped recipes in `data/` directory contain reviews with `has_modifica
     "expected_impact": "Chewier texture and improved consistency"
   }
 }
-```
+````
 
 ## How It Works
 

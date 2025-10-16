@@ -7,23 +7,18 @@
     "2 cups chopped zucchini",
     "1 cup chopped tomato",
     "0.5 cup chopped onion",
-    "0.5 cup grated Parmesan cheese",
-    "0.75 cup biscuit baking mix",
+    "0.33333298563957 cup grated Parmesan cheese",
+    "pizza dough",
     "3 eggs",
-    "1/2 cup cooked Italian ground sausage, 1/2 cup lean hamburger",
     "0.5 cup milk",
     "0.5 teaspoon salt",
-    "1 teaspoon Italian herbs, 1 clove minced garlic",
-    "0.25 teaspoon ground black pepper",
-    "1/2 teaspoon Italian herbs"
+    "0.25 teaspoon ground black pepper"
   ],
   "instructions": [
     "Preheat the oven to 400 degrees F (200 degrees C). Coat a 10-inch pie plate with cooking spray.",
     "Combine zucchini, tomato, onion, and Parmesan cheese in the prepared pie plate.",
-    "Saute onions until caramelized. Cook zucchini and tomatoes separately in skillets and drain well before mixing.",
     "Beat baking mix, eggs, milk, salt, and black pepper together in a bowl until smooth; pour over zucchini mixture.",
-    "Bake in the preheated oven until a knife inserted into center comes out clean, about 30 minutes.",
-    "Weave a top crust with pizza dough for added crunch and presentation."
+    "Bake in the preheated oven until a knife inserted into center comes out clean, about 30 minutes."
   ],
   "modifications_applied": [
     {
@@ -32,60 +27,30 @@
         "reviewer": null,
         "rating": 4
       },
-      "modification_type": "addition",
-      "reasoning": "The user added Italian herbs, garlic, increased Parmesan cheese, and added protein to enhance the flavor and make the dish more filling.",
+      "modification_type": "ingredient_substitution",
+      "reasoning": "The user substituted the biscuit baking mix with pizza dough to add crunch and enhance the presentation.",
       "changes_made": [
         {
           "type": "ingredient",
-          "from_text": "0.33333298563957 cup grated Parmesan cheese",
-          "to_text": "0.5 cup grated Parmesan cheese",
+          "from_text": "0.75 cup biscuit baking mix",
+          "to_text": "pizza dough",
           "operation": "replace"
-        },
-        {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "1 teaspoon Italian herbs, 1 clove minced garlic",
-          "operation": "add"
-        },
-        {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "1/2 teaspoon Italian herbs",
-          "operation": "add"
-        },
-        {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "1/2 cup cooked Italian ground sausage, 1/2 cup lean hamburger",
-          "operation": "add"
-        },
-        {
-          "type": "instruction",
-          "from_text": "",
-          "to_text": "Saute onions until caramelized. Cook zucchini and tomatoes separately in skillets and drain well before mixing.",
-          "operation": "add"
-        },
-        {
-          "type": "instruction",
-          "from_text": "",
-          "to_text": "Weave a top crust with pizza dough for added crunch and presentation.",
-          "operation": "add"
         }
       ]
     }
   ],
   "enhancement_summary": {
-    "total_changes": 6,
+    "total_changes": 1,
     "change_types": [
-      "addition"
+      "ingredient_substitution"
     ],
-    "expected_impact": "The user added Italian herbs, garlic, increased Parmesan cheese, and added protein to enhance the flavor and make the dish more filling."
+    "expected_impact": "The user substituted the biscuit baking mix with pizza dough to add crunch and enhance the presentation."
   },
   "description": "Zucchini, tomato, and onion combine with Parmesan cheese and baking mix, like Bisquick, to make this pie recipe a snap to throw together on a summer day.",
   "servings": "6",
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2025-10-16T14:30:07.421744",
+  "created_at": "2025-10-16T16:11:26.204525",
   "pipeline_version": "1.0.0"
 }

@@ -1,0 +1,62 @@
+{
+  "recipe_id": "200283_enhanced",
+  "original_recipe_id": "200283",
+  "title": "Spinach Basil Pesto (Community Enhanced)",
+  "ingredients": [
+    "1.5 cups baby spinach leaves",
+    "0.75 cup fresh basil leaves",
+    "0.5 cup toasted pine nuts",
+    "0.5 cup grated Parmesan cheese",
+    "0.5 cup extra-virgin olive oil, divided",
+    "4 cloves garlic, peeled and quartered",
+    "1 tablespoon fresh lemon juice",
+    "0.75 teaspoon kosher salt",
+    "0.5 teaspoon lemon zest",
+    "0.5 teaspoon freshly ground black pepper"
+  ],
+  "instructions": [
+    "Place spinach, basil, pine nuts, Parmesan cheese, 2 tablespoons olive oil, garlic, lemon juice, salt, lemon zest, and pepper into a blender; blend until nearly smooth, scraping the sides of the bowl with a spatula as necessary.",
+    "Drizzle remaining olive oil into the mixture while processing until smooth.",
+    "If using a blender, add all of the olive oil before blending until smooth.",
+    "Enjoy!"
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "This is the real deal, truly amazing flavor. I followed the recipe exactly and since I do not have a food processor, I made this in my Kitchen Aid blender. I had to add all of the oil before turning it on with this method. I was pleased it worked just great. I used pine nuts and had no trouble finding them, I didn't think they were terribly expensive as some others have mentioned. Thanks Dianne for yet another wonderful recipe.",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "technique_change",
+      "reasoning": "The user successfully adapted the recipe to work without a food processor, which can be helpful for those without one.",
+      "changes_made": [
+        {
+          "type": "instruction",
+          "from_text": "Place spinach, basil, pine nuts, Parmesan cheese, 2 tablespoons olive oil, garlic, lemon juice, salt, lemon zest, and pepper into a food processor; blend until nearly smooth, scraping the sides of the bowl with a spatula as necessary.",
+          "to_text": "Place spinach, basil, pine nuts, Parmesan cheese, 2 tablespoons olive oil, garlic, lemon juice, salt, lemon zest, and pepper into a blender; blend until nearly smooth, scraping the sides of the bowl with a spatula as necessary.",
+          "operation": "replace"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "If using a blender, add all of the olive oil before blending until smooth.",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 2,
+    "change_types": [
+      "technique_change"
+    ],
+    "expected_impact": "The user successfully adapted the recipe to work without a food processor, which can be helpful for those without one."
+  },
+  "description": "This tasty spinach pesto is easy to make by blending fresh spinach and basil with lemon juice, lemon zest, garlic, olive oil, and Parmesan cheese.",
+  "servings": "24",
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2025-10-16T16:04:32.324868",
+  "pipeline_version": "1.0.0"
+}

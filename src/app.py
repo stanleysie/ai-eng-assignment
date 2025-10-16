@@ -6,6 +6,19 @@ import os
 import glob
 from llm_pipeline.pipeline import LLMAnalysisPipeline
 from flask import Flask, jsonify
+from flask import request
+from flask import make_response
+from flask import Response
+
+
+def _enable_cors(resp: Response) -> Response:
+    resp.headers["Access-Control-Allow-Origin"] = request.headers.get("Origin", "*")
+    resp.headers["Access-Control-Allow-Methods"] = "GET,POST,OPTIONS"
+    resp.headers["Access-Control-Allow-Headers"] = request.headers.get(
+        "Access-Control-Request-Headers", "Content-Type, Authorization"
+    )
+    resp.headers["Access-Control-Allow-Credentials"] = "true"
+    return resp
 
 
 def read_all_recipes() -> list[Dict]:
@@ -42,13 +55,13 @@ def create_app() -> Flask:
 
     @app.get("/")
     def all():
-        return jsonify(read_all_recipes()), 200
+        return _enable_cors(jsonify(read_all_recipes())), 200
 
     @app.get("/recipe/<id>")
     def recipe(id: str):
-        return jsonify(read_recipe(id)), 200
+        return _enable_cors(jsonify(read_recipe(id))), 200
 
-    @app.post("/recipe/<id>/enhance")
+    @app.get("/recipe/<id>/enhance")
     def enhance(id: str):
         receipt_file = None
         for file in glob.glob("data/recipe_*.json"):
@@ -60,8 +73,14 @@ def create_app() -> Flask:
 
         enhanced_recipe = LLMAnalysisPipeline().process_single_recipe(receipt_file)
         if enhanced_recipe is None:
-            return jsonify({"message": "Failed to enhance recipe"}), 500
-        return jsonify(enhanced_recipe.model_dump()), 200
+            return _enable_cors(jsonify({"message": "No modifications found"}), 200)
+        return _enable_cors(jsonify(enhanced_recipe.model_dump())), 200
+
+    @app.route("/", methods=["OPTIONS"])
+    @app.route("/recipe/<id>", methods=["OPTIONS"])
+    @app.route("/recipe/<id>/enhance", methods=["OPTIONS"])
+    def options(id: str | None = None):
+        return _enable_cors(make_response("", 204))
 
     return app
 
