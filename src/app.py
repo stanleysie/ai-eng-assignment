@@ -73,7 +73,7 @@ def create_app() -> Flask:
 
         enhanced_recipe = LLMAnalysisPipeline().process_single_recipe(receipt_file)
         if enhanced_recipe is None:
-            return _enable_cors(jsonify({"message": "No modifications found"}), 200)
+            return _enable_cors(jsonify({"message": "No modifications found"})), 200
         return _enable_cors(jsonify(enhanced_recipe.model_dump())), 200
 
     @app.route("/", methods=["OPTIONS"])

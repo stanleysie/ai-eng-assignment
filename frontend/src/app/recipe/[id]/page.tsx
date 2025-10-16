@@ -44,6 +44,10 @@ export default function RecipePage() {
     setRecipe(updatedRecipe);
 
     const modifications = data.modifications_applied;
+    if (!modifications) {
+      setIsEnhancing(false);
+      return;
+    }
     const modificationReferences: Record<string, string> = {};
     for (const modification of modifications) {
       const changes = modification.changes_made;
