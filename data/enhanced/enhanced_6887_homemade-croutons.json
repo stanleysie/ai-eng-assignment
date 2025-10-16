@@ -1,0 +1,60 @@
+{
+  "recipe_id": "6887_enhanced",
+  "original_recipe_id": "6887",
+  "title": "Homemade Croutons (Community Enhanced)",
+  "ingredients": [
+    "sourdough loaf bread from Costco",
+    "olive oil",
+    "salt and fresh cracked pepper"
+  ],
+  "instructions": [
+    "Preheat the oven to 350 degrees F (175 degrees C).",
+    "Slice off crusts from stale bread slices. Brush bread on both sides with melted butter. Cut bread slices into small cubes. Sprinkle with garlic salt. Arrange cubes on an ungreased cookie sheet.",
+    "Bake in the preheated oven until browned, about 15 minutes. Let cool completely, then store in a covered container or plastic bag."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Great base recipe. I used some soursough loaf bread from Costco and I used olive oil and salt and fresh cracked pepper. I prefer mine with a subtle flavor. I will use these on my salad and in some roasted tomato soup like they do at Tender Greens. Excellent, thanks!",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "The user substituted stale bread with sourdough loaf bread to enhance the flavor and texture of the croutons.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "15 slices stale bread",
+          "to_text": "sourdough loaf bread from Costco",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "0.25 cup butter, melted",
+          "to_text": "olive oil",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "2 teaspoons garlic salt",
+          "to_text": "salt and fresh cracked pepper",
+          "operation": "replace"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 3,
+    "change_types": [
+      "ingredient_substitution"
+    ],
+    "expected_impact": "The user substituted stale bread with sourdough loaf bread to enhance the flavor and texture of the croutons."
+  },
+  "description": "These croutons from scratch are made with stale buttered bread, seasoned with garlic salt, and baked until crispy for a tasty salad or soup condiment.",
+  "servings": "12",
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2025-10-16T14:28:36.119692",
+  "pipeline_version": "1.0.0"
+}

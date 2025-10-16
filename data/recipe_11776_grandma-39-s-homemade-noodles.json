@@ -1,0 +1,63 @@
+{
+  "url": "https://www.allrecipes.com/recipe/11776/grandmas-noodles-ii/",
+  "scraped_at": "2025-10-16T13:56:04.760172",
+  "recipe_id": "11776",
+  "title": "Grandma&#39;s Homemade Noodles",
+  "description": "A homemade noodle recipe for perfect egg noodles made from egg, salt, milk, flour, and baking powder. You&#39;ll love how they taste in soups and broths.",
+  "rating": {
+    "value": "4.8",
+    "count": "348"
+  },
+  "preptime": "PT10M",
+  "cooktime": "PT10M",
+  "totaltime": "PT160M",
+  "servings": "4",
+  "ingredients": [
+    "1 large egg, beaten",
+    "2 tablespoons milk",
+    "0.5 teaspoon salt",
+    "1 cup sifted all-purpose flour, or more as needed"
+  ],
+  "instructions": [
+    "Gather the ingredients.",
+    "Combine egg, milk, and salt in a bowl. Add sifted flour and stir until a dough forms, adding more flour as needed, a little at a time, for the dough to come together. Separate into two balls.",
+    "Sprinkle a work surface with flour and roll out each piece of dough as thin as you like. Let rolled dough rest for 20 minutes.",
+    "Cut into strips and spread to dry, dusting with a bit of flour so the noodles don&#39;t stick together. Let dry for approximately 2 hours.",
+    "Cook noodles in boiling salted water, or hot soup, until tender, about 10 minutes."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "135 kcal",
+    "carbohydrateContent": "24 g",
+    "cholesterolContent": "47 mg",
+    "fiberContent": "1 g",
+    "proteinContent": "5 g",
+    "saturatedFatContent": "1 g",
+    "sodiumContent": "265 mg",
+    "fatContent": "2 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Sandy'}]",
+  "categories": [
+    "Dinner"
+  ],
+  "featured_tweaks": [],
+  "reviews": [
+    {
+      "text": "Good recipe but should definitely double amount for a family of 4. To make sure noodles aren't tough, do not knead. Kneading this at all will make a rubbery, tough noodles. Mix the dough until ingredients are just combined. I mix all the ingredients in a KitchenAid mixer then rolled it out by hand. To minimize overworking the dough, mix all the wet ingredients first before adding to the flour. I then divided the dough ball into two halves (4 sections if doubling the recipe) and wrapped in plastic to let it sit for about 20 min to let the gluten relax. This will make rolling easier and prevent shrinking. I then cut the pasta with a pizza cutter and immediately cooked them. No need to wait 2 hrs. Also, I found 1/4 tsp of baking powder was plenty to give the pasta some airiness. Freezes well too, just make sure to flour cut noodles well before freezing. A great simple recipe. 4 stars for lack of directions, 5 stars for recipe itself.",
+      "rating": 4
+    },
+    {
+      "text": "Good recipe but should definitely double amount for a family of 4. To make sure noodles aren't tough, do not knead. Kneading this at all will make a rubbery, tough noodles. Mix the dough until ingredients are just combined. I mix all the ingredients in a KitchenAid mixer then rolled it out by hand. To minimize overworking the dough, mix all the wet ingredients first before adding to the flour. I then divided the dough ball into two halves (4 sections if doubling the recipe) and wrapped in plastic to let it sit for about 20 min to let the gluten relax. This will make rolling easier and prevent shrinking. I then cut the pasta with a pizza cutter and immediately cooked them. No need to wait 2 hrs. Also, I found 1/4 tsp of baking powder was plenty to give the pasta some airiness. Freezes well too, just make sure to flour cut noodles well before freezing. A great simple recipe. 4 stars for lack of directions, 5 stars for recipe itself.",
+      "rating": 4
+    },
+    {
+      "text": "I cheated and used a pasta machine because I made these while watching tv and only had the coffee table as a workplace. The dough was a bit hard to work with, but after a few spins through the pasta machine, it was silky and beautiful. The taste was great and it complemented my chicken noodle soup fantastically. They were even better the second day after the noodles absorbed some of the broth. Yum!",
+      "rating": 5
+    },
+    {
+      "text": "I cheated and used a pasta machine because I made these while watching tv and only had the coffee table as a workplace. The dough was a bit hard to work with, but after a few spins through the pasta machine, it was silky and beautiful. The taste was great and it complemented my chicken noodle soup fantastically. They were even better the second day after the noodles absorbed some of the broth. Yum!",
+      "rating": 5
+    }
+  ]
+}

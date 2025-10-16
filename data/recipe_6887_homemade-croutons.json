@@ -1,0 +1,72 @@
+{
+  "url": "https://www.allrecipes.com/recipe/6887/croutons/",
+  "scraped_at": "2025-10-16T13:56:05.869750",
+  "recipe_id": "6887",
+  "title": "Homemade Croutons",
+  "description": "These croutons from scratch are made with stale buttered bread, seasoned with garlic salt, and baked until crispy for a tasty salad or soup condiment.",
+  "rating": {
+    "value": "4.8",
+    "count": "317"
+  },
+  "preptime": "PT5M",
+  "cooktime": "PT15M",
+  "totaltime": "PT20M",
+  "servings": "12",
+  "ingredients": [
+    "15 slices stale bread",
+    "0.25 cup butter, melted",
+    "2 teaspoons garlic salt"
+  ],
+  "instructions": [
+    "Preheat the oven to 350 degrees F (175 degrees C).",
+    "Slice off crusts from stale bread slices. Brush bread on both sides with melted butter. Cut bread slices into small cubes. Sprinkle with garlic salt. Arrange cubes on an ungreased cookie sheet.",
+    "Bake in the preheated oven until browned, about 15 minutes. Let cool completely, then store in a covered container or plastic bag."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "118 kcal",
+    "carbohydrateContent": "16 g",
+    "cholesterolContent": "10 mg",
+    "fiberContent": "1 g",
+    "proteinContent": "3 g",
+    "saturatedFatContent": "3 g",
+    "sodiumContent": "542 mg",
+    "sugarContent": "1 g",
+    "fatContent": "5 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Carol'}]",
+  "categories": [
+    "Condiment"
+  ],
+  "featured_tweaks": [
+    {
+      "text": "Great base recipe. I used some soursough loaf bread from Costco and I used olive oil and salt and fresh cracked pepper. I prefer mine with a subtle flavor. I will use these on my salad and in some roasted tomato soup like they do at Tender Greens. Excellent, thanks!",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "Great base recipe. I used some soursough loaf bread from Costco and I used olive oil and salt and fresh cracked pepper. I prefer mine with a subtle flavor. I will use these on my salad and in some roasted tomato soup like they do at Tender Greens. Excellent, thanks!",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "text": "Great base recipe. I used some soursough loaf bread from Costco and I used olive oil and salt and fresh cracked pepper. I prefer mine with a subtle flavor. I will use these on my salad and in some roasted tomato soup like they do at Tender Greens. Excellent, thanks!",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "Great base recipe. I used some soursough loaf bread from Costco and I used olive oil and salt and fresh cracked pepper. I prefer mine with a subtle flavor. I will use these on my salad and in some roasted tomato soup like they do at Tender Greens. Excellent, thanks!",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "Who knew croutons would be so darn easy. We had some leftover three-cheese bread from Panera that was going stale. I cut it up, tossed in a ziploc bag as another reviewer recommended, poured the butter in and tossed. Put on a couple cookie sheets and baked it up! I did turn the croutons half-way through baking, and the cheese bread took much longer than the 15 minutes. We've already ate half of the batch just snacking!",
+      "rating": 5
+    }
+  ]
+}

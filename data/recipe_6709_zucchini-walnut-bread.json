@@ -1,0 +1,90 @@
+{
+  "url": "https://www.allrecipes.com/recipe/6709/zucchini-walnut-bread/",
+  "scraped_at": "2025-10-16T13:56:03.507344",
+  "recipe_id": "6709",
+  "title": "Zucchini Walnut Bread",
+  "description": "This moist zucchini bread recipe features succulent raisins and chewy walnuts that enhance this quick bread flavored with cinnamon spice and vanilla.",
+  "rating": {
+    "value": "4.5",
+    "count": "91"
+  },
+  "preptime": "PT10M",
+  "cooktime": "PT55M",
+  "totaltime": "PT75M",
+  "servings": "24",
+  "ingredients": [
+    "3.5 cups all-purpose flour",
+    "1.5 teaspoons baking soda",
+    "1.5 teaspoons salt",
+    "1 teaspoon ground cinnamon",
+    "0.75 teaspoon baking powder",
+    "4 eggs",
+    "2 cups white sugar",
+    "1 cup vegetable oil",
+    "2 cups grated zucchini",
+    "1 cup raisins",
+    "1 cup chopped walnuts",
+    "1 teaspoon vanilla extract"
+  ],
+  "instructions": [
+    "Preheat the oven to 350 degrees F (175 degrees C) with rack in lowest position. Grease and lightly flour two 9x5-inch loaf pans.",
+    "Whisk flour, baking soda, salt, cinnamon, and baking powder together in a bowl until well combined. Set aside.",
+    "Beat eggs in a large bowl until smooth; gradually beat in sugar until well combined. Stir in oil; add flour mixture, alternating with zucchini. Stir in raisins, walnuts, and vanilla extract until incorporated. Divide batter between the prepared pans.",
+    "Bake in the preheated oven until a toothpick inserted into centers comes out clean, about 55 minutes. Cool for 10 minutes in the pans, then turn out onto a wire rack to cool completely."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "276 kcal",
+    "carbohydrateContent": "37 g",
+    "cholesterolContent": "31 mg",
+    "fiberContent": "1 g",
+    "proteinContent": "4 g",
+    "saturatedFatContent": "2 g",
+    "sodiumContent": "253 mg",
+    "sugarContent": "21 g",
+    "fatContent": "13 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Barbara Domurat'}]",
+  "categories": [
+    "Snack",
+    "Dessert"
+  ],
+  "featured_tweaks": [
+    {
+      "text": "It was perfect just as shown. A 9x5 pan is the one to use for proper baking. Not sweet and I even tossed in a few Choc chips. May top with something fun next time for guests. My husband and I don’t need the sugar though.",
+      "rating": 4,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "this zuchinni bread has perfect amount of moist in the center. this made me 2 loaves that i baked for 1 hour and i added some nutmeg to add some spice. i also added more zuchinni because my mom grows them. the raisins add the perfect touch",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "This was so good! I did tweak it a bit, but I always like to add a bit extra ;) I doubled the recipe and replaced a cup of the zucchini with some grated carrots because my zucchini wasn’t big enough, and it added a lovely color to the bread when I cut it. I used golden raisins instead of regular because I like the flavor and look of them better, as well. I also replaced half of the white sugar with brown to give it a richer flavor and color. Finally, I added some more spices like nutmeg and clove and extra cinnamon. Fabulous recipe!",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "text": "It was perfect just as shown. A 9x5 pan is the one to use for proper baking. Not sweet and I even tossed in a few Choc chips. May top with something fun next time for guests. My husband and I don’t need the sugar though.",
+      "rating": 4,
+      "has_modification": true
+    },
+    {
+      "text": "this zuchinni bread has perfect amount of moist in the center. this made me 2 loaves that i baked for 1 hour and i added some nutmeg to add some spice. i also added more zuchinni because my mom grows them. the raisins add the perfect touch",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "This was so good! I did tweak it a bit, but I always like to add a bit extra ;) I doubled the recipe and replaced a cup of the zucchini with some grated carrots because my zucchini wasn’t big enough, and it added a lovely color to the bread when I cut it. I used golden raisins instead of regular because I like the flavor and look of them better, as well. I also replaced half of the white sugar with brown to give it a richer flavor and color. Finally, I added some more spices like nutmeg and clove and extra cinnamon. Fabulous recipe!",
+      "rating": 5,
+      "has_modification": true
+    }
+  ]
+}

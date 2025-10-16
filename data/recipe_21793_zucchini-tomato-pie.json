@@ -1,0 +1,78 @@
+{
+  "url": "https://www.allrecipes.com/recipe/21793/zucchini-tomato-pie/",
+  "scraped_at": "2025-10-16T13:56:04.232761",
+  "recipe_id": "21793",
+  "title": "Zucchini Tomato Pie",
+  "description": "Zucchini, tomato, and onion combine with Parmesan cheese and baking mix, like Bisquick, to make this pie recipe a snap to throw together on a summer day.",
+  "rating": {
+    "value": "4.2",
+    "count": "118"
+  },
+  "preptime": "PT15M",
+  "cooktime": "PT30M",
+  "totaltime": "PT45M",
+  "servings": "6",
+  "ingredients": [
+    "nonstick cooking spray",
+    "2 cups chopped zucchini",
+    "1 cup chopped tomato",
+    "0.5 cup chopped onion",
+    "0.33333298563957 cup grated Parmesan cheese",
+    "0.75 cup biscuit baking mix",
+    "3 eggs",
+    "0.5 cup milk",
+    "0.5 teaspoon salt",
+    "0.25 teaspoon ground black pepper"
+  ],
+  "instructions": [
+    "Preheat the oven to 400 degrees F (200 degrees C). Coat a 10-inch pie plate with cooking spray.",
+    "Combine zucchini, tomato, onion, and Parmesan cheese in the prepared pie plate.",
+    "Beat baking mix, eggs, milk, salt, and black pepper together in a bowl until smooth; pour over zucchini mixture.",
+    "Bake in the preheated oven until a knife inserted into center comes out clean, about 30 minutes."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "148 kcal",
+    "carbohydrateContent": "14 g",
+    "cholesterolContent": "100 mg",
+    "fiberContent": "1 g",
+    "proteinContent": "8 g",
+    "saturatedFatContent": "3 g",
+    "sodiumContent": "516 mg",
+    "sugarContent": "4 g",
+    "fatContent": "7 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'VEGAS'}]",
+  "categories": [
+    "Dinner",
+    "Side Dish"
+  ],
+  "featured_tweaks": [
+    {
+      "text": "I followed the other suggestions and ramped up the flavor with Italian herbs and garlic. I increased the parmesan cheese and made it a meal with protein by pre-cooking in a skillet, 1/2 italian ground sausage and 1/2 lean hamburger. I sauteed the onions until carmelized and also cooked the zucchini and tomatoes separately in skillets and drained well befre mixing. I also had some pizza dough on hand so I weaved a top crust to give it some crunch and add to the presentation.",
+      "rating": 4,
+      "has_modification": true,
+      "is_featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "text": "I followed the other suggestions and ramped up the flavor with Italian herbs and garlic. I increased the parmesan cheese and made it a meal with protein by pre-cooking in a skillet, 1/2 italian ground sausage and 1/2 lean hamburger. I sauteed the onions until carmelized and also cooked the zucchini and tomatoes separately in skillets and drained well befre mixing. I also had some pizza dough on hand so I weaved a top crust to give it some crunch and add to the presentation.",
+      "rating": 4,
+      "has_modification": true
+    },
+    {
+      "text": "I followed Robbin818 suggestions to sauté the veggies and adjust the bisquick recipe and then seasoned the veggies with salt, pepper and seasoning before putting them in the pie pan. I also added a little Parmesan cheese to the bisquick mix. It’s amazing! I won’t be having trouble using up the zucchini this summer!",
+      "rating": 5
+    },
+    {
+      "text": "Awesome dish and easy to make. Did use a seasoned salt. Would make again!",
+      "rating": 5
+    },
+    {
+      "text": "I made this but added some fresh herbs like Basil and oregano and cheddar cheese and it was delicious!!",
+      "rating": 4
+    }
+  ]
+}

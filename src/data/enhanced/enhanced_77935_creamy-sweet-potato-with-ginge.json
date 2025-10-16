@@ -1,0 +1,75 @@
+{
+  "recipe_id": "77935_enhanced",
+  "original_recipe_id": "77935",
+  "title": "Creamy Sweet Potato With Ginger Soup (Community Enhanced)",
+  "ingredients": [
+    "2 tablespoons olive oil",
+    "1.5 pounds peeled raw sweet potatoes, cut into 1-inch chunks",
+    "1 large onion, cut into large dice",
+    "1 tablespoon butter",
+    "1 pinch sugar",
+    "3 large garlic cloves, thickly sliced",
+    "1.5 teaspoons ground ginger",
+    "0.5 teaspoon ground nutmeg",
+    "extra cayenne pepper",
+    "3 cups chicken broth, homemade or from a carton or can",
+    "heavy cream instead of 1/2 & 1/2",
+    "Salt and freshly ground pepper, to taste",
+    "lots of black pepper",
+    "Garnish: chopped honey-roasted peanuts"
+  ],
+  "instructions": [
+    "Gather the ingredients.",
+    "Heat oil over medium-high heat in a large, deep saute pan until shimmering. Add sweet potatoes, then onion; saute, stirring very little at first, then more frequently, until vegetables start to turn golden brown, 7 to 8 minutes.",
+    "Reduce heat to low and add butter, sugar and garlic; continue cooking until all vegetables are a rich spotty caramel color, about 10 minutes longer.",
+    "Add ginger, nutmeg and cayenne pepper; continue to saute until fragrant, 30 seconds to 1 minute longer.",
+    "Add broth; bring to a simmer over medium-high heat. Reduce heat to low and simmer, partially covered, until sweet potatoes are tender, about 10 minutes.",
+    "Using an immersion blender or traditional blender, puree until very smooth, 30 seconds to 1 minute. (If using a traditional blender, vent it either by removing the lid&#39;s pop-out center or by lifting one edge of the lid. Drape the blender canister with a kitchen towel. To &#39;clean&#39; the canister, pour in a little half-and-half, blend briefly, then add to the soup.)",
+    "Return to pan (or a soup pot); add enough half-and-half so the mixture is souplike, yet thick enough to float garnish. Taste, and add salt and pepper if needed. Heat through, ladle into bowls, garnish and serve."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Great soup! The vegetables caramelize beautifully with this method (though I think it would also work fine in the oven, which would take longer but keep my hands free for other things). I added extra cayenne pepper, lots of black pepper, and used heavy cream instead of 1/2 & 1/2; otherwise followed as written. I didn't find it at all too sweet - these are sweet potatoes, after all. Thanks for the recipe!",
+        "reviewer": null,
+        "rating": 4
+      },
+      "modification_type": "quantity_adjustment",
+      "reasoning": "The user adjusted the amount of cayenne pepper and black pepper to suit their taste preferences.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "0.125 teaspoon cayenne pepper",
+          "to_text": "extra cayenne pepper",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "lots of black pepper",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "1.5 cups half-and-half (or whole milk)",
+          "to_text": "heavy cream instead of 1/2 & 1/2",
+          "operation": "replace"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 3,
+    "change_types": [
+      "quantity_adjustment"
+    ],
+    "expected_impact": "The user adjusted the amount of cayenne pepper and black pepper to suit their taste preferences."
+  },
+  "description": "Made with sweet potatoes and seasoned with ginger, nutmeg, and cayenne pepper, this creamy soup is topped with honey-roasted peanuts.",
+  "servings": "8",
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2025-10-16T12:23:52.482430",
+  "pipeline_version": "1.0.0"
+}

@@ -40,7 +40,10 @@ def test_single_recipe():
         return False
 
     # Test with chocolate chip cookie recipe
-    recipe_file = "../data/recipe_10813_best-chocolate-chip-cookies.json"
+    # recipe_file = "../data/recipe_10813_best-chocolate-chip-cookies.json"
+    recipe_file = (
+        "../data/recipe_144299_nikujaga-japanese-style-meat-and-potatoes-.json"
+    )
     if not Path(recipe_file).exists():
         logger.error(f"Recipe file not found: {recipe_file}")
         return False
@@ -50,16 +53,21 @@ def test_single_recipe():
     try:
         # Process the recipe
         enhanced_recipe = pipeline.process_single_recipe(
-            recipe_file=recipe_file,
-            save_output=True
+            recipe_file=recipe_file, save_output=True
         )
 
         if enhanced_recipe:
             logger.success("✓ Single recipe test successful!")
             logger.info(f"Enhanced recipe: {enhanced_recipe.title}")
-            logger.info(f"Modifications applied: {len(enhanced_recipe.modifications_applied)}")
-            logger.info(f"Total changes: {enhanced_recipe.enhancement_summary.total_changes}")
-            logger.info(f"Expected impact: {enhanced_recipe.enhancement_summary.expected_impact}")
+            logger.info(
+                f"Modifications applied: {len(enhanced_recipe.modifications_applied)}"
+            )
+            logger.info(
+                f"Total changes: {enhanced_recipe.enhancement_summary.total_changes}"
+            )
+            logger.info(
+                f"Expected impact: {enhanced_recipe.enhancement_summary.expected_impact}"
+            )
             return True
         else:
             logger.error("✗ Single recipe test failed - no enhanced recipe generated")
@@ -68,6 +76,7 @@ def test_single_recipe():
     except Exception as e:
         logger.error(f"Single recipe test failed with error: {e}")
         import traceback
+
         traceback.print_exc()
         return False
 
@@ -91,9 +100,7 @@ def test_all_recipes():
 
     try:
         # Process all recipes
-        enhanced_recipes = pipeline.process_recipe_directory(
-            data_dir="../data"
-        )
+        enhanced_recipes = pipeline.process_recipe_directory(data_dir="../data")
 
         # Generate summary report
         report_path = pipeline.save_summary_report(enhanced_recipes)
@@ -108,6 +115,7 @@ def test_all_recipes():
     except Exception as e:
         logger.error(f"All recipes test failed with error: {e}")
         import traceback
+
         traceback.print_exc()
         return False
 
@@ -145,8 +153,12 @@ def main():
         logger.info("=" * 60)
         if success:
             logger.success("All recipes validation passed! ✓")
-            logger.info("Check the 'data/enhanced/' directory for all enhanced recipes.")
-            logger.info("Check 'data/enhanced/pipeline_summary_report.json' for detailed results.")
+            logger.info(
+                "Check the 'data/enhanced/' directory for all enhanced recipes."
+            )
+            logger.info(
+                "Check 'data/enhanced/pipeline_summary_report.json' for detailed results."
+            )
         else:
             logger.error("All recipes validation failed! ✗")
             sys.exit(1)

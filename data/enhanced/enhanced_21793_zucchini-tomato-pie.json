@@ -1,0 +1,91 @@
+{
+  "recipe_id": "21793_enhanced",
+  "original_recipe_id": "21793",
+  "title": "Zucchini Tomato Pie (Community Enhanced)",
+  "ingredients": [
+    "nonstick cooking spray",
+    "2 cups chopped zucchini",
+    "1 cup chopped tomato",
+    "0.5 cup chopped onion",
+    "0.5 cup grated Parmesan cheese",
+    "0.75 cup biscuit baking mix",
+    "3 eggs",
+    "1/2 cup cooked Italian ground sausage, 1/2 cup lean hamburger",
+    "0.5 cup milk",
+    "0.5 teaspoon salt",
+    "1 teaspoon Italian herbs, 1 clove minced garlic",
+    "0.25 teaspoon ground black pepper",
+    "1/2 teaspoon Italian herbs"
+  ],
+  "instructions": [
+    "Preheat the oven to 400 degrees F (200 degrees C). Coat a 10-inch pie plate with cooking spray.",
+    "Combine zucchini, tomato, onion, and Parmesan cheese in the prepared pie plate.",
+    "Saute onions until caramelized. Cook zucchini and tomatoes separately in skillets and drain well before mixing.",
+    "Beat baking mix, eggs, milk, salt, and black pepper together in a bowl until smooth; pour over zucchini mixture.",
+    "Bake in the preheated oven until a knife inserted into center comes out clean, about 30 minutes.",
+    "Weave a top crust with pizza dough for added crunch and presentation."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "I followed the other suggestions and ramped up the flavor with Italian herbs and garlic. I increased the parmesan cheese and made it a meal with protein by pre-cooking in a skillet, 1/2 italian ground sausage and 1/2 lean hamburger. I sauteed the onions until carmelized and also cooked the zucchini and tomatoes separately in skillets and drained well befre mixing. I also had some pizza dough on hand so I weaved a top crust to give it some crunch and add to the presentation.",
+        "reviewer": null,
+        "rating": 4
+      },
+      "modification_type": "addition",
+      "reasoning": "The user added Italian herbs, garlic, increased Parmesan cheese, and added protein to enhance the flavor and make the dish more filling.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "0.33333298563957 cup grated Parmesan cheese",
+          "to_text": "0.5 cup grated Parmesan cheese",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1 teaspoon Italian herbs, 1 clove minced garlic",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1/2 teaspoon Italian herbs",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1/2 cup cooked Italian ground sausage, 1/2 cup lean hamburger",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Saute onions until caramelized. Cook zucchini and tomatoes separately in skillets and drain well before mixing.",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Weave a top crust with pizza dough for added crunch and presentation.",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 6,
+    "change_types": [
+      "addition"
+    ],
+    "expected_impact": "The user added Italian herbs, garlic, increased Parmesan cheese, and added protein to enhance the flavor and make the dish more filling."
+  },
+  "description": "Zucchini, tomato, and onion combine with Parmesan cheese and baking mix, like Bisquick, to make this pie recipe a snap to throw together on a summer day.",
+  "servings": "6",
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2025-10-16T14:30:07.421744",
+  "pipeline_version": "1.0.0"
+}
