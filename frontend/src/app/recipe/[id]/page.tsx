@@ -10,7 +10,7 @@ export default function RecipePage() {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [modificationReferences, setModificationReferences] = useState<
-    Record<string, string>
+    Record<string, string[]>
   >({});
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function RecipePage() {
       setIsEnhancing(false);
       return;
     }
-    const modificationReferences: Record<string, string> = {};
+    const modificationReferences: Record<string, string[]> = {};
     for (const modification of modifications) {
       const changes = modification.changes_made;
       for (const change of changes) {
@@ -58,8 +58,10 @@ export default function RecipePage() {
         for (const modification of modifications) {
           const changes = modification.changes_made;
           for (const change of changes) {
-            modificationReferences[change.to_text] =
-              modification.source_review.text;
+            modificationReferences[change.to_text] = [
+              change.from_text,
+              modification.source_review.text,
+            ];
           }
         }
       }
@@ -98,13 +100,30 @@ export default function RecipePage() {
         </div>
       </section>
 
-      <button
-        className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        onClick={enhanceRecipe}
-        disabled={isEnhancing}
-      >
-        {isEnhancing ? "Enhancing..." : "Enhance"}
-      </button>
+      <div className="relative group inline-block">
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={enhanceRecipe}
+          disabled={isEnhancing || recipe?.data.reviews.length === 0}
+        >
+          {isEnhancing ? "Enhancing..." : "Enhance"}
+        </button>
+        {recipe?.data?.reviews && recipe.data.reviews.length === 0 && (
+          <span
+            className="opacity-0 group-hover:opacity-100 absolute left-1/2 -translate-x-1/2 top-full mt-2 z-10 w-max max-w-xs bg-yellow-100 text-gray-900 text-xs px-3 py-2 rounded shadow tooltip transition-opacity duration-200 pointer-events-none"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            This recipe cannot be enhanced further because it has no reviews.
+          </span>
+        )}
+        <style jsx>{`
+          .relative:hover .tooltip,
+          .group:hover .tooltip {
+            opacity: 1 !important;
+            pointer-events: auto;
+          }
+        `}</style>
+      </div>
 
       {/* Ingredients section */}
       <section className="space-y-3">
@@ -127,7 +146,16 @@ export default function RecipePage() {
                       className="opacity-0 group-hover:opacity-100 absolute left-1/2 -translate-x-1/2 top-full mt-2 z-10 w-max max-w-xs bg-yellow-100 text-gray-900 text-xs px-3 py-2 rounded shadow tooltip transition-opacity duration-200 pointer-events-none"
                       style={{ whiteSpace: "pre-line" }}
                     >
-                      {highlight}
+                      {highlight[0] && highlight[0].length > 0 && (
+                        <>
+                          <span>Original: {highlight[0]}</span>
+                          <br />
+                          <br />
+                        </>
+                      )}
+                      {highlight[1] && highlight[1].length > 0 && (
+                        <span>Review: {highlight[1]}</span>
+                      )}
                     </span>
                   )}
                   {/* Add group if using tailwind for hover */}
@@ -169,7 +197,16 @@ export default function RecipePage() {
                       className="opacity-0 group-hover:opacity-100 absolute left-1/2 -translate-x-1/2 top-full mt-2 z-10 w-max max-w-xs bg-yellow-100 text-gray-900 text-xs px-3 py-2 rounded shadow tooltip transition-opacity duration-200 pointer-events-none"
                       style={{ whiteSpace: "pre-line" }}
                     >
-                      {highlight}
+                      {highlight[0] && highlight[0].length > 0 && (
+                        <>
+                          <span>Original: {highlight[0]}</span>
+                          <br />
+                          <br />
+                        </>
+                      )}
+                      {highlight[1] && highlight[1].length > 0 && (
+                        <span>Review: {highlight[1]}</span>
+                      )}
                     </span>
                   )}
                   {/* Add group if using tailwind for hover */}
